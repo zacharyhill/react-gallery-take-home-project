@@ -24,6 +24,13 @@ module.exports = {
           'file-loader'
         ]
       },
+      {
+        test: /\.svg$/,
+        loader: 'url-loader',
+        options: {
+          limit: 1000000, // inline files below 1MB
+        }
+      },
     ]
   },
   plugins: [
