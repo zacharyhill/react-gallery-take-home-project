@@ -1,0 +1,14 @@
+{
+  "name": "zillow-group-photo-gallery-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.jsx",
+  "dependencies": {
+    "react-dom": "^16.4.1",
+    "react": "^16.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "",
+  "license": "ISC"
+}
