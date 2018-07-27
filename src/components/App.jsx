@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 
+import Gallery from './Gallery';
+import { data as pictures } from '../dummy-data/pictures';
+
 export default class App extends Component {
   render() {
-    return <div>Hello, World!</div>
+    return <Gallery pictures={pictures} />
   }
 }
