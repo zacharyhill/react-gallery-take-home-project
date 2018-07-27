@@ -18,6 +18,12 @@ module.exports = {
             presets: ['env', 'react', 'stage-2'],
         }
       },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      },
     ]
   },
   plugins: [
