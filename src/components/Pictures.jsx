@@ -7,7 +7,7 @@ const pictures = (props) => (
     {props.pictures.map((pic, index) => (
       <div key={index}>
         <div className='gallery-card'>
-          <GalleryImage src={pic.url} caption={pic.caption} />
+          <GalleryImage img={pic} openModal={props.openModal} imgIndex={index} />
         </div>
       </div>
     ))}
