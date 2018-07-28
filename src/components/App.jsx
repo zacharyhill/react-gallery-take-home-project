@@ -32,8 +32,7 @@ export default class App extends Component {
       animate: false,
     });
   }
-  startImgTransition(currentImg, event) {
-    event.stopPropagation();
+  startImgTransition(currentImg) {
     // allow time for short animation before rerender
     setTimeout(() => {
       this.goToNextImg(currentImg)
