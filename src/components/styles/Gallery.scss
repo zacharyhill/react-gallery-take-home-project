@@ -1,6 +1,7 @@
 $topPadding: 1rem;
 $bottomPadding: $topPadding * 2;
 $borderRadius: 4px;
+$maxThumbnailWidth: 60%;
 
 .gallery-container {
   padding-top: $topPadding;
@@ -14,8 +15,6 @@ $borderRadius: 4px;
   .gallery-thumbnail {
     border-radius: $borderRadius;
     height: auto;
-    max-width: 60%;
+    max-width: $maxThumbnailWidth;
   } 
 }
-
-@import './Modal.scss';

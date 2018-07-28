@@ -4,7 +4,14 @@ const galleryImage = (props) => {
   const openModal = () => {
     props.openModal(props.img);
   };
-  return <img className="gallery-thumbnail" src={props.img.url} alt={props.img.caption} onClick={openModal} />
+  return (
+    <img
+      alt={props.img.caption}
+      className="gallery-thumbnail"
+      onClick={openModal} 
+      src={props.img.url}
+    />
+  );
 };
 
 export default galleryImage;

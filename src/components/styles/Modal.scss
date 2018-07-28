@@ -1,3 +1,9 @@
+$captionBackgroundColor: rgba(0, 0, 0, 0.5);
+$captionFontFamily: sans-serif;
+$captionTextColor: #cccccc;
+$modalBackgroundColor:  rgba(0, 0, 0, 0.7);
+$opacityEase: opacity .3s ease-in-out;
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -5,7 +11,7 @@
   z-index: 10;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: $modalBackgroundColor;
 
   .modal-body {
     position: absolute;
@@ -16,10 +22,10 @@
     border-radius: 4px;
     transform: translate(-50%, -50%);
     opacity: 1;
-    -webkit-transition: opacity .3s ease-in-out;
-    -moz-transition: opacity .3s ease-in-out;
-    -o-transition: opacity .3s ease-in-out;
-    transition: opacity .3s ease-in-out;
+    -webkit-transition: $opacityEase;
+    -moz-transition: $opacityEase;
+    -o-transition: opacityEase;
+    transition: $opacityEase;
     overflow: hidden;
   
     img {
@@ -27,10 +33,10 @@
     }
 
     .caption {
-      color: #cccccc;
-      font-family: sans-serif;
+      color: $captionTextColor;
+      font-family: $captionFontFamily;
       padding: 7px 14px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: $captionBackgroundColor;
       z-index: 13;
       width: 100%;
       position: absolute;

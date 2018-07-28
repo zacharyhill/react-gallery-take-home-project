@@ -1,14 +1,16 @@
 import React from 'react';
 
+import './styles/Modal.scss';
+
 const galleryModal = (props) => {
-  if (props.showModal === false) {
+  if (!props.showModal) {
     return null;
   }
   const animateClass = props.animate ? ' hide' : '';
   const goToNextImage = (event) => {
     props.goToNextImg(props.img, event);
   };
-  return(
+  return (
     <div className='modal-overlay' onClick={props.closeModal}>
       <div className={`modal-body${animateClass}`}>
         <div className="caption">{props.img.caption}</div>

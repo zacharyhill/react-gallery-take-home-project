@@ -14,7 +14,7 @@ export default class App extends Component {
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.goToNextImg = this.goToNextImg.bind(this);
+    this.startImgTransition = this.startImgTransition.bind(this);
   }
   closeModal() {
     this.setState({
@@ -22,17 +22,21 @@ export default class App extends Component {
       modalImg: null,
     });
   }
-  goToNextImg(currentImg, event) {
+  goToNextImg(currentImg) {
+    const nextIndex = currentImg.index + 1;
+    const { imgs } = this.state;
+    // go back to first picture at the end
+    const nextImg = imgs[nextIndex] !== undefined ? imgs[nextIndex] : imgs[0];
+    this.setState({
+      modalImg: nextImg,
+      animate: false,
+    });
+  }
+  startImgTransition(currentImg, event) {
     event.stopPropagation();
+    // allow time for short animation before rerender
     setTimeout(() => {
-      const nextIndex = currentImg.index + 1;
-      const { imgs } = this.state;
-      // go back to first picture at the end
-      const nextImg = imgs[nextIndex] !== undefined ? imgs[nextIndex] : imgs[0];
-      this.setState({
-        modalImg: nextImg,
-        animate: false,
-      });
+      this.goToNextImg(currentImg)
     }, 100);
     this.setState({
       animate: true,
@@ -50,7 +54,7 @@ export default class App extends Component {
         animate={this.state.animate}
         closeModal={this.closeModal}
         modalImg={this.state.modalImg}
-        goToNextImg={this.goToNextImg}
+        goToNextImg={this.startImgTransition}
         openModal={this.openModal}
         pictures={this.state.imgs}
         showModal={this.state.showModal}

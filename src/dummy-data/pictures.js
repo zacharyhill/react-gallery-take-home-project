@@ -20,5 +20,5 @@ module.exports = {
       url: 'https://i.ytimg.com/vi/pcOwnqBl2a0/maxresdefault.jpg',
       caption: 'What could possibly go wrong?',
     },
-  ]
+  ],
 };
