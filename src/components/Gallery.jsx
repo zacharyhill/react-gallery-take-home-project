@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './styles/Gallery.scss';
+
 const gallery = (props) => (
   <div className="gallery-container">
     <div>
