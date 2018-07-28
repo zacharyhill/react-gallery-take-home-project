@@ -1,5 +1,6 @@
 import React from 'react';
 
+import GalleryImage from './GalleryImage';
 import './styles/Gallery.scss';
 
 const gallery = (props) => (
@@ -8,7 +9,7 @@ const gallery = (props) => (
       {props.pictures.map((pic, index) => (
         <div key={index}>
           <div className='gallery-card'>
-            <img src={pic.url} alt={pic.caption} />
+            <GalleryImage src={pic.url} caption={pic.caption} />
           </div>
         </div>
       ))}

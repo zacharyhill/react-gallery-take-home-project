@@ -1,3 +1,20 @@
+$topPadding: 1rem;
+$bottomPadding: $topPadding * 2;
+$borderRadius: 4px;
+
 .gallery-container {
-  padding-top: 1rem;
+  padding-top: $topPadding;
+}
+
+.gallery-card {
+  margin-bottom: $bottomPadding;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.gallery-thumbnail {
+  border-radius: $borderRadius;
+  height: auto;
+  max-width: 60%;
 }
