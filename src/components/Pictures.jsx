@@ -4,13 +4,16 @@ import GalleryImage from './GalleryImage';
 
 const pictures = (props) => (
   <div>
-    {props.pictures.map((pic, index) => (
-      <div key={index}>
-        <div className='gallery-card'>
-          <GalleryImage img={pic} openModal={props.openModal} imgIndex={index} />
+    {props.pictures.map((pic, index) => {
+      pic.index = index;
+      return (
+        <div key={index}>
+          <div className='gallery-card'>
+            <GalleryImage img={pic} openModal={props.openModal} />
+          </div>
         </div>
-      </div>
-    ))}
+      );
+    })}
   </div>
 );
 

@@ -4,12 +4,15 @@ const galleryModal = (props) => {
   if (props.showModal === false) {
     return null;
   }
-  const animateClass = props.animate ? 'hide' : '';
+  const animateClass = props.animate ? ' hide' : '';
+  const goToNextImage = (event) => {
+    props.goToNextImg(props.img, event);
+  };
   return(
     <div className='modal-overlay' onClick={props.closeModal}>
-      <div className='modal-body'>
+      <div className={`modal-body${animateClass}`}>
         <div className="caption">{props.img.caption}</div>
-        <img className={animateClass} src={props.img.url} />
+        <img src={props.img.url} onClick={goToNextImage} />
       </div>
     </div>
   );

@@ -7,17 +7,35 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      animate: false,
+      imgs: pictures,
       modalImg: {},
       showModal: false,
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.goToNextImg = this.goToNextImg.bind(this);
   }
   closeModal() {
     this.setState({
       showModal: false,
-      animate: false,
       modalImg: null,
+    });
+  }
+  goToNextImg(currentImg, event) {
+    event.stopPropagation();
+    setTimeout(() => {
+      const nextIndex = currentImg.index + 1;
+      const { imgs } = this.state;
+      // go back to first picture at the end
+      const nextImg = imgs[nextIndex] !== undefined ? imgs[nextIndex] : imgs[0];
+      this.setState({
+        modalImg: nextImg,
+        animate: false,
+      });
+    }, 100);
+    this.setState({
+      animate: true,
     });
   }
   openModal(img) {
@@ -29,10 +47,12 @@ export default class App extends Component {
   render() {
     return (
       <Gallery
+        animate={this.state.animate}
         closeModal={this.closeModal}
         modalImg={this.state.modalImg}
+        goToNextImg={this.goToNextImg}
         openModal={this.openModal}
-        pictures={pictures}
+        pictures={this.state.imgs}
         showModal={this.state.showModal}
       />
     );

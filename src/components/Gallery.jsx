@@ -12,8 +12,9 @@ const gallery = (props) => (
       pictures={props.pictures}
     />
     <GalleryModal
-      animateTransition={props.animateTransition}  
+      animate={props.animate}
       closeModal={props.closeModal}
+      goToNextImg={props.goToNextImg}
       showModal={props.showModal}
       img={props.modalImg}
     />
